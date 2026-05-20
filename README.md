@@ -1,6 +1,7 @@
 # hr-agent-platform
 
 # Project structure
+
 hr-agent-platform/
 ├── app/
 │   ├── __init__.py
