@@ -14,6 +14,8 @@ class IntentResponse(BaseModel):
     confidence_score: float = Field(
         description="How sure the model is (0.0 to 1.0)."
     )
+    significance_score: float = Field(description="How important is this info for future reference? (0.0-1.0)")
+    
     reasoning: str = Field(
         description="Explanation for the classification."
     )
