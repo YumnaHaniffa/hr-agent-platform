@@ -6,6 +6,7 @@ from fastapi import FastAPI, BackgroundTasks
 from pydantic import BaseModel
 import uuid
 from app.config import settings
+from app.core.database import init_db
 
 # Import your graph and services
 # from app.graph import workflow 

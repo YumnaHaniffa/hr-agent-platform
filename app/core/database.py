@@ -9,6 +9,7 @@ def init_db():
     Ensures the data directory exists and creates the 
     SQLite database tables if they do not exist.
     """
+    
     # 1. Extract the folder path from your config (e.g., "data/")
     # settings.database_url is "data/hr_platform.db"
     db_path = settings.database_url
