@@ -1,3 +1,6 @@
+#Error handling
+from app.middleware.errors import global_exception_handler
+
 #FastAPI entry point & routes
 from fastapi import FastAPI, BackgroundTasks
 from pydantic import BaseModel
@@ -9,6 +12,10 @@ from app.config import settings
 # from app.services.audit import log_event
 
 app = FastAPI(title="AI HR Platform")
+
+# Register the safety net
+app.add_exception_handler(Exception, global_exception_handler)
+
 
 # 1. Define what the user sends us
 class ChatRequest(BaseModel):
@@ -33,7 +40,8 @@ async def chat_endpoint(request: ChatRequest):
     
     return {
         "request_id": request_id,
-        "response": "The graph would return its answer here."
+        "response": "The graph would return its answer here.",
+        "status": "Processing safe input"
     }
 
 @app.get("/audit/{req_id}")
@@ -44,7 +52,11 @@ async def get_audit(req_id: str):
     # Logic to SELECT from audit_log table where request_id = req_id
     return {"status": "Retrieving data from SQLite..."}
 
+#Provides a "Single Source of Truth" for the entire application
 @app.on_event("startup")
 async def startup_event():
     print(f"Connecting to database at: {settings.database_url}")
+    
     # You could trigger table creation here
+    """Runs automatically when the FastAPI server starts up."""
+    init_db()

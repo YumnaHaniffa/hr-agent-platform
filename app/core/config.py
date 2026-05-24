@@ -1,4 +1,5 @@
 #.env loading with Pydantic Settings
+#Validate data types before the app runs
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
