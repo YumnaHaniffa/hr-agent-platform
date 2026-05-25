@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     openai_api_key: str
     database_url: str = "data/hr_platform.db"
     log_level: str = "INFO"
+    port: int = 8000
     
     # This tells Pydantic to look for a file named .env
     model_config = SettingsConfigDict(env_file=".env")
