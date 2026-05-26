@@ -94,10 +94,10 @@ Follow these steps exactly to run, build, and test this application on any local
 ### Create and trigger a clean virtual environment
 python -m venv .venv
 
-# Activate on Windows (PowerShell):
+### Activate on Windows (PowerShell):
 .\.venv\Scripts\activate
 
-# Activate on Mac/Linux:
+### Activate on Mac/Linux:
 source .venv/bin/activate
 
 ### Install the specific dependencies
