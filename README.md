@@ -124,11 +124,11 @@ Follow these steps exactly to run, build, and test this application on any local
 2. Build the optimized cached image layer using your terminal
 ```
     docker build -t hr-agent-platform-image .
-
+```
 3. Launch the container background process and link the network bridge ports
 ```
     docker run -d --name hr_platform_app -p 8000:8000 hr-agent-platform-image
-
+```
 4. Confirm successful deployment by verifying the following live outputs
 - API Interactive Documentation UI: http://127.0.0.1:8000/docs
 - Active Container Runtime Logs: docker logs hr_platform_app
