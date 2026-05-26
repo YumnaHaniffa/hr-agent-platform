@@ -13,7 +13,6 @@ This platform leverages a modular, high-throughput backend built on **FastAPI** 
 * **Data & Storage Tier:** Every single node transition writes sequentially to an append-only SQLite transaction table (`audit_log`), while business-critical context is parsed using automated significance logic and saved to Long-Term Memory (`ltm`).
 
 ---
-
 ## 2. Project Directory Structure
 
 ```text
@@ -38,9 +37,9 @@ hr-agent-platform/
 ├── .gitignore               # Excludes venv, .env, and __pycache__
 └── requirements.txt         # Project dependencies
 
+```
+
 ---
-
-
 ## 3. Core Module Implementations & Design Justifications
 
 ### A. Intent Classification & Routing Engine
