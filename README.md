@@ -92,7 +92,7 @@ Follow these steps exactly to run, build, and test this application on any local
    cd HR-AGENT-PLATFORM
 
 ### Create and trigger a clean virtual environment
-    ```bash
+    ```
     python -m venv .venv
 
     ### Activate on Windows (PowerShell):
@@ -104,15 +104,17 @@ Follow these steps exactly to run, build, and test this application on any local
 
 
 ### Install the specific dependencies
-    ```bash
+    ```
     pip install -r requirements.txt
 
 ### Initialize the environment variables. Create a file named .env in the root folder and add the configuration
-OPENAI_API_KEY=your_actual_api_key_here
-DATABASE_URL=sqlite:///./data/hr_platform.db
+```
+    OPENAI_API_KEY=your_actual_api_key_here
+    DATABASE_URL=sqlite:///./data/hr_platform.db
 
 ### Boot up the local web server using Uvicorn
-uvicorn app.main:app --reload
+```
+    uvicorn app.main:app --reload
 
 Visit http://127.0.0.1:8000/docs in your browser to verify the local interactive Swagger interface.
 
@@ -120,12 +122,13 @@ Visit http://127.0.0.1:8000/docs in your browser to verify the local interactive
 
 1. Make sure Docker Desktop is open and running on your computer.
 2. Build the optimized cached image layer using your terminal
-
-docker build -t hr-agent-platform-image .
+```
+    docker build -t hr-agent-platform-image .
 
 3. Launch the container background process and link the network bridge ports
 
-docker run -d --name hr_platform_app -p 8000:8000 hr-agent-platform-image
+```
+    docker run -d --name hr_platform_app -p 8000:8000 hr-agent-platform-image
 
 4. Confirm successful deployment by verifying the following live outputs
 - API Interactive Documentation UI: http://127.0.0.1:8000/docs
@@ -133,5 +136,5 @@ docker run -d --name hr_platform_app -p 8000:8000 hr-agent-platform-image
 
 ## 6. Verification Test Script
 Run this single-line command in your local PowerShell terminal to watch the multi-agent engine execute an end-to-end task pipeline live inside the container environment:
-
-Invoke-RestMethod -Uri "[http://127.0.0.1:8000/chat](http://127.0.0.1:8000/chat)" -Method Post -ContentType "application/json" -Body '{"user_id": "emp_abc123", "message": "I need to request sick leave starting tomorrow for two days due to a high fever."}'
+```
+    Invoke-RestMethod -Uri "[http://127.0.0.1:8000/chat](http://127.0.0.1:8000/chat)" -Method Post -ContentType "application/json" -Body '{"user_id": "emp_abc123", "message": "I need to request sick leave starting tomorrow for two days due to a high fever."}'
