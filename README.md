@@ -92,7 +92,7 @@ Follow these steps exactly to run, build, and test this application on any local
    cd HR-AGENT-PLATFORM
 
 ### Create and trigger a clean virtual environment
-    ```
+    
     python -m venv .venv
 
     ### Activate on Windows (PowerShell):
@@ -104,13 +104,13 @@ Follow these steps exactly to run, build, and test this application on any local
 
 
 ### Install the specific dependencies
-    ```
+    
     pip install -r requirements.txt
 
 ### Initialize the environment variables. Create a file named .env in the root folder and add the configuration
-```
-    OPENAI_API_KEY=your_actual_api_key_here
-    DATABASE_URL=sqlite:///./data/hr_platform.db
+
+OPENAI_API_KEY=your_actual_api_key_here
+DATABASE_URL=sqlite:///./data/hr_platform.db
 
 ### Boot up the local web server using Uvicorn
 ```
