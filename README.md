@@ -92,18 +92,20 @@ Follow these steps exactly to run, build, and test this application on any local
    cd HR-AGENT-PLATFORM
 
 ### Create and trigger a clean virtual environment
-```bash
-python -m venv .venv
+    ```bash
+    python -m venv .venv
 
-### Activate on Windows (PowerShell):
-```bash
-.\.venv\Scripts\activate
+    ### Activate on Windows (PowerShell):
+    .\.venv\Scripts\activate
 
-### Activate on Mac/Linux:
-source .venv/bin/activate
+    ### Activate on Mac/Linux:
+    source .venv/bin/activate
+
+
 
 ### Install the specific dependencies
-pip install -r requirements.txt
+    ```bash
+    pip install -r requirements.txt
 
 ### Initialize the environment variables. Create a file named .env in the root folder and add the configuration
 OPENAI_API_KEY=your_actual_api_key_here
