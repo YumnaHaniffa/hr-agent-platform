@@ -109,11 +109,12 @@ Follow these steps exactly to run, build, and test this application on any local
 
 ### Initialize the environment variables. Create a file named .env in the root folder and add the configuration
 
-OPENAI_API_KEY=your_actual_api_key_here
-DATABASE_URL=sqlite:///./data/hr_platform.db
+    OPENAI_API_KEY=your_actual_api_key_here
+    DATABASE_URL=sqlite:///./data/hr_platform.db
 
 ### Boot up the local web server using Uvicorn
-uvicorn app.main:app --reload
+
+    uvicorn app.main:app --reload
 
 - Visit http://127.0.0.1:8000/docs in your browser to verify the local interactive Swagger interface.
 
@@ -134,4 +135,5 @@ uvicorn app.main:app --reload
 
 ## 6. Verification Test Script
 Run this single-line command in your local PowerShell terminal to watch the multi-agent engine execute an end-to-end task pipeline live inside the container environment:
+
     Invoke-RestMethod -Uri "[http://127.0.0.1:8000/chat](http://127.0.0.1:8000/chat)" -Method Post -ContentType "application/json" -Body '{"user_id": "emp_abc123", "message": "I need to request sick leave starting tomorrow for two days due to a high fever."}'
