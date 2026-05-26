@@ -92,9 +92,11 @@ Follow these steps exactly to run, build, and test this application on any local
    cd HR-AGENT-PLATFORM
 
 ### Create and trigger a clean virtual environment
+```bash
 python -m venv .venv
 
 ### Activate on Windows (PowerShell):
+```bash
 .\.venv\Scripts\activate
 
 ### Activate on Mac/Linux:
